@@ -422,8 +422,7 @@ class AwsS3Adapter extends AbstractAdapter implements CanOverwriteFiles
                 $this->applyPathPrefix($path),
                 $this->bucket,
                 $this->applyPathPrefix($newpath),
-                $this->getRawVisibility($path) === AdapterInterface::VISIBILITY_PUBLIC
-                    ? 'public-read' : 'private',
+                'public-read',
                 $this->options
             );
         } catch (S3Exception $e) {
